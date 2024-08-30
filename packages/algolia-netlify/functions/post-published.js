@@ -32,7 +32,7 @@ exports.handler = async (event) => {
         index: process.env.ALGOLIA_INDEX
     };
 
-    let {post} = JSON.parse(event.body);
+    let {post,page} = JSON.parse(event.body);
     if (!post) post = page;
     post = (post && Object.keys(post.current).length > 0 && post.current) || {};
 
